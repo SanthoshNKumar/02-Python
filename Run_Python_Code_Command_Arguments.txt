@@ -1,0 +1,29 @@
+
+# test.py
+
+import sys
+import argparse
+
+class test:
+   def hello(opt):
+    print("hello and that's your sum:")
+    sum = opt.fn + opt.sn
+    print(sum)
+
+   def parse_opt(known=False):
+      parser = argparse.ArgumentParser()
+      parser.add_argument('--fn', type=int)
+      parser.add_argument('--sn', type=int)
+
+      opt = parser.parse_known_args()[0] if known else parser.parse_args()
+      return opt
+
+if __name__== "__main__":
+   opt = test.parse_opt()
+   test.hello(opt)
+
+
+# How to Run the file
+# PS C:\Users\bmi_cims\Desktop\Jupyter> python test.py --fn 1 --sn 2
+# hello and that's your sum:
+# 3
